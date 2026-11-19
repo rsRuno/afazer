@@ -1,0 +1,75 @@
+<html lang ="pt-br">
+    <head>
+        <meta name="viewport" content="initial-scale=1.0, width=device-width" charset="utf-8">
+        <link type="text/css" rel="stylesheet" href="./css/style.css">
+        <title id="pageName"></title>
+    </head>
+
+    <body>
+        <header> </header>
+        <main>
+            <div id="popupOverlay" 
+                class="overlay-container">
+                <div class="popup-box">
+                    <h2 style="color: rgb(45, 45, 45);">NOVO AFAZER</h2>
+                    <form id = "taskForm" class="form-container">
+                        <label class="form-label" for="name">Nome: </label>
+                        <input id="nomeFazer" class="form-input" type="text"placeholder="Digite o nome do afazer" name="name" required>
+
+                        <label class="form-label" for="email">Prazo: :</label>
+                        <input id="dataFazer" class="form-input"type="datetime-local" placeholder="Escolha a data de entrega" name="email" required>
+
+                        <button onsubmit="addTask()" class="btn-submit"  type="submit">ADICIONAR</button>
+                    </form>
+
+                    <button class="btn-close-popup" onclick="showAndHideTaskPopup()">FECHA</button>
+                </div>
+            </div>
+
+
+            <section>
+                <div id="tasksDiv">
+                    <h3 id="nicknameLabel" style="font-size: 3rem;">
+                        Good night, user
+                        <img style="width: 2rem; height: 2rem;" src="./resources/imgs/edit.png">
+                    </h3>
+                    <p id="userDateParagraph">Tuesday , 14th December</p>
+
+                    <div id="dashboard">
+                         <div id="dashboardTaskItem">
+                            <h2>AFAZERES TOTAIS</h2>
+                            <h3 id="tasksCountNum">0</h3>
+                        </div>
+
+                        <div id="dashboardTaskItem">
+                            <h2>AFAZERES PRONTO</h2>
+                            <h3 id="tasksCompletedNum">0</h3>
+                        </div>
+                        <div id="dashboardTaskItem">
+                            <h2>AFAZERES FALTANTES</h2>
+                            <h3 id="tasksRemainingNum">0</h3>
+                        </div>
+                        <div id="Level"></div>
+                    </div>
+
+                    <div style=" display: flex; justify-content:center; background-color: rgba(255,255,255, 0.4); border-radius: 30px;;">
+                        <button onclick="showAndHideTaskPopup()" id="btn-addTask">ADICIONE UM AFAZER</button>
+
+                    </div>
+
+                    <div id="taskItems">
+
+                    </div>
+
+                </div>
+
+            </section>
+        </main>
+
+        <footer>
+
+        </footer>
+
+        <script src="./script.js" type="text/javascript"></script>
+    </body>
+</html>

@@ -1,0 +1,256 @@
+* {
+    margin: 0;
+    padding: 0;
+    font-size: 1.06rem;
+    box-sizing: border-box;
+}
+
+header {
+    background-color: #0f0f0f;
+    padding: 0.15rem;
+
+    color: white;
+    text-align: center;
+    ;
+}
+
+header h1 {
+    font-size: .7rem;
+}
+
+
+
+nav a {
+    padding: .05rem .8rem;
+    text-decoration: none;
+    color: rgb(255,255,255);
+
+    background-color: rgba(0, 0, 0, 0.1);
+}
+
+nav p:hover {
+    background-color: rgb(255,255,255, 0.1);
+}
+
+section {
+    padding: 1rem 0.2rem;
+}
+
+
+#dashboard {
+    justify-content:  center;
+    display: flex;
+    flex-direction: row;
+}
+
+#dashboardTaskItem{
+    color: #101010;
+    background-color: #f6f6f6;
+    border-radius: 10px;
+    border: #0f0f0f solid 1px;
+
+    margin: 1.5rem 2rem;
+    padding: 1rem 0.5rem;
+
+}
+
+#dashboardTaskItem h2{
+    margin: 0.5rem 1.5rem;
+}
+
+
+#tasksRemainingNum{
+    color: rgba(255,0,0, 0.8); text-align: center; font-size: 2rem;
+}
+
+#tasksCompletedNum{
+    color: rgba(0, 255, 8, 0.8); text-align: center;  font-size: 2rem;
+}
+
+#tasksCountNum{
+    color:#0f0f0f; text-align: center; font-size: 2rem;
+}
+
+#taskItems{
+    background-color: rgba(240, 240, 240, 0.25);
+    border-radius: 20px;
+    
+}
+
+#taskItem{
+    background-color: rgb(238 , 238, 238, 1);
+    color: rgb(0,0,0);
+    font-family:'Courier New', Courier, monospace;
+
+    margin: 0.25rem 0rem;
+    border: rgb(248,248,248) 1px;
+    border-radius: 10px;
+
+    padding: 10px 10px;
+}
+
+
+#btn-addTask{
+    padding:10px; border: 0px; border-radius: 4px; background-color: rgb(220, 220, 220);
+}
+
+#btn-addTask:hover{
+    background-color: rgb(230, 230, 230);
+ }
+
+
+#btn-pronto, #btn-desmarcar, #btn-remove {
+    border-radius: 4px;
+    border: 0px;
+}
+
+#btn-desmarcar { background-color: #fec823;}
+
+#btn-pronto { background-color: #4caf50;}
+
+#btn-remove {  background-color: #e74c3c;}
+
+#btn-pronto:hover, #btn-desmarcar:hover, #btn-remove:hover{
+    background-color: #ffff;
+}
+
+main {
+    padding: 0 20rem;
+}
+
+fieldset {
+    display: flex;
+    flex-direction: column;
+    border: 2px #0f0f0f solid ;
+    border-radius: 10px;
+
+    padding: 0.5rem 2rem;
+}
+
+fieldset input {
+    border-color: 1rem solid rgb(0 0 0 / 0.5);
+    padding: 1rem 0;
+}
+
+fieldset button {
+    background-color: #0f0f0f;
+    border-radius: 5px;
+    color: aliceblue;
+    margin: 1rem 0px;
+    padding: 0.6rem 0px;
+}
+
+fieldset label {
+    padding: 1rem;
+}
+
+
+.btn-open-popup {
+            padding: 12px 24px;
+            font-size: 18px;
+            background-color: green;
+            color: #fff;
+            border: none;
+            border-radius: 8px;
+            cursor: pointer;
+            transition: background-color 0.3s ease;
+        }
+
+.btn-open-popup:hover {
+    background-color: #4caf50;
+}
+
+.overlay-container {
+    display: none;
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background: rgba(0, 0, 0, 0.6);
+    justify-content: center;
+    align-items: center;
+    opacity: 0;
+    transition: opacity 0.3s ease;
+}
+
+.popup-box {
+    background: #fff;
+    padding: 24px;
+    border-radius: 12px;
+    box-shadow: 0 0 20px rgba(0, 0, 0, 0.4);
+    width: 320px;
+    text-align: center;
+    opacity: 0;
+    transform: scale(0.8);
+    animation: fadeInUp 0.5s ease-out forwards;
+          
+}
+
+.form-container {
+    display: flex;
+    flex-direction: column;
+ }
+
+.form-label {
+    margin-bottom: 10px;
+    font-size: 16px;
+    color: #444;
+    text-align: left;
+}
+
+.form-input {
+    padding: 10px;
+    margin-bottom: 20px;
+    border: 1px solid #ccc;
+    border-radius: 8px;
+    font-size: 16px;
+    width: 100%;
+    box-sizing: border-box;
+}
+
+.btn-submit,
+.btn-close-popup {
+    padding: 12px 24px;
+    border: none;
+    border-radius: 8px;
+    cursor: pointer;
+    transition: background-color 0.3s ease, color 0.3s ease;
+}
+
+.btn-submit {
+   background-color: rgb(27, 47, 27);
+   color: #fff;
+}
+
+.btn-close-popup {
+    margin-top: 12px;
+    background-color: #e74c3c;
+    color: #fff;
+}
+
+.btn-submit:hover,
+.btn-close-popup:hover {
+    background-color: rgb(196, 203, 196)
+}
+
+/* Keyframes for fadeInUp animation */
+@keyframes fadeInUp {
+  from {
+    opacity: 0;
+    transform: translateY(20px);
+   }
+
+   to {
+      opacity: 1;
+      transform: translateY(0);
+   }
+
+}
+
+/* Animation for popup */
+.overlay-container.show {
+    display: flex;
+    opacity: 1;
+}
+  
